@@ -63,7 +63,27 @@ class SqliteHelper(context: Context, name:String, version:Int)
     }
     //데이터 수정함수
     fun updateMemo(memo:Memo){
+        val wd = writableDatabase
 
+
+
+        val values = ContentValues()
+        values.put("content",memo.content)
+        values.put("datetime",memo.datetime)
+
+
+        //형식 - 테이블, 수정할 값, 어디를 수정할건지
+        wd.update("memo",values,"no = ${memo.no}", null)
+        wd.close()
     }
 
+    //데이터 삭제함수
+    fun deleteMemo(memo:Memo){
+        val wd = writableDatabase
+//        val delete = "delete from memo where no = ${memo.no}"
+//        wd.execSQL(delete)
+
+        wd.delete("memo", "no = ${memo.no}", null)
+        wd.close()
+    }
 }
