@@ -7,12 +7,12 @@ import androidx.room.Query
 
 interface MemoDAO {
     @Insert(onConflict = REPLACE)
-    fun insert(memo: Memo1)
+    fun insert(memo: MemoEntity)
 
     @Query("SELECT * FROM memo")
-    fun getAll() : List<Memo1>
+    fun getAll() : List<MemoEntity>
 
     @Delete
-    fun delete(memo : Memo)
+    fun delete(memo : MemoEntity)
 
 }
