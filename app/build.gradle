@@ -71,6 +71,9 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
 
 
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
+
+
     def room_version = "2.2.6"
 
     implementation "androidx.room:room-runtime:$room_version"
